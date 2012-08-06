@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<title>ubiquity-slideshow-netrunner</title>
+
+	<link href="link/base.css" rel="stylesheet" type="text/css" />
+
+	<base target="_blank" />
+
+	<script type="text/javascript" src="link-core/jquery.js"></script>
+	<script type="text/javascript" src="link-core/jquery.cycle.all.js"></script>
+
+	<script type="text/javascript" src="link-core/base.js"></script>
+
+	<script type="text/javascript" src="directory.js"></script>
+	<script type="text/javascript">
+		SLIDESHOW_OPTIONS = {
+			fx:'fade',
+			speed:180,
+		}
+	</script>
+
+	<script type="text/javascript" src="link-core/slideshow.js"></script>
+</head>
+
+<body>
+
+<div id="container">
+	<div id="slideshow">
+		<div><a href="1-welcome.html" class="load"></a></div>
+		<div><a href="2-customize.html" class="load"></a></div>
+		<div><a href="3-connected.html" class="load"></a></div>
+		<div><a href="4-creative.html" class="load"></a></div>
+		<div><a href="5-entertained.html" class="load"></a></div>
+		<div><a href="6-fun.html" class="load"></a></div>
+		<div><a href="7-community.html" class="load"></a></div>
+		<div><a href="8-thanks.html" class="load"></a></div>
+	</div>
+</div>
+
+<div id="controls">
+	<a class="control-arrow" id="prev-slide" style="display:none;"></a>
+	<a class="control-arrow" id="next-slide"></a>
+	<input type="hidden" id="current-slide" />
+</div>
+
+
+</body>
+
+</html>
