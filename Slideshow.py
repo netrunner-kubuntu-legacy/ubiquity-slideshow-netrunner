@@ -124,7 +124,7 @@ def progress_increment(progressbar, fraction):
 #Main program
 
 
-default_path = os.path.join( os.path.abspath(os.path.dirname(sys.argv[0])) , 'build', 'netrunner' )
+default_path = os.path.join( os.path.abspath(os.path.dirname(sys.argv[0])) , 'build', 'linuxmint-kde' )
 
 default_locale = locale.getlocale()[0]
 

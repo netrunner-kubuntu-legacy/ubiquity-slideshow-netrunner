@@ -14,7 +14,7 @@ Provides: ubiquity-slideshow
 Conflicts: ubiquity-slideshow
 Replaces: ubiquity-slideshow
 Depends: ${misc:Depends}
-Description: Ubiquity slideshow for Ubuntu
+Description: Ubiquity slideshow for Netrunner
  A slideshow intended for the Ubiquity installer, designed as a quick 
  introduction to Netrunner.
 
