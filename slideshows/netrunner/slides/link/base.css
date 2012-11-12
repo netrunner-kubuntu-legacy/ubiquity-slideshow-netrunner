@@ -66,7 +66,7 @@ a {
 }
 .control-arrow#next-slide {
         background-image:url('arrow-next.png');
-        left:582px; /* 752px - 33px */
+        right:90px; /* 752px - 33px */
 }
 
 
@@ -74,7 +74,7 @@ a {
 	display:none;
 	position:absolute;
 	top:540px;
-	width:700px;
+	width:600px;
 	text-align:center;
 }
 #debug-controls input {
@@ -93,7 +93,7 @@ a {
 	position:absolute;
 	
 	bottom:40px;
-	width:510px; /* the ideal width would leave more space on the right */
+	width:560px; /* the ideal width would leave more space on the right */
 	left:46px; /* matches padding of .content and .content ul: 16 + 20 */
 	
 	font-size:20px; /* applies to all lines except first */
@@ -121,7 +121,7 @@ right of a slide and is given a size of 64x64 pixels.
 	height:auto;
 	
 	top:40px;
-	right:40px;
+	right:100px;
 	
 	z-index:11;
 	border:0px;
@@ -165,9 +165,9 @@ Slide's body text goes inside here.
 
 .content ul {
 	margin-top:0px;
-	padding-left:60px;
+	padding-left:50px;
 	
-	width:470px;
+	width:430px;
 	height:223px;
 	
 	overflow:auto;
@@ -191,8 +191,8 @@ ul :first-line, there would be less room for failure. */
 	width:100%;
 	padding:0px;
 	margin:0px;
-	bottom:30px;
-	text-align:right;
+	bottom:35px;
+	text-align:left;
 	
 	font-weight:bold;
 	color:#c3c3c3;
