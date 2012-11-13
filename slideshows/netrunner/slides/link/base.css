@@ -39,37 +39,6 @@ a {
 	height:100%;
 }
 
-.control-arrow {
-        display:block;
-        position:absolute;
-
-        z-index:100;
-        top:180px; /*top:218px;*/
-        height:64px;
-        width:33px;
-
-        background-repeat:no-repeat;
-        cursor:pointer;
-}
-.control-arrow.disabled {
-	cursor:default;
-}
-.control-arrow:hover {
-        background-position: 0px -65px;
-}
-.control-arrow:active {
-        background-position: 0px -130px;
-}
-.control-arrow#prev-slide {
-        background-image:url('arrow-back.png');
-        left:0px;
-}
-.control-arrow#next-slide {
-        background-image:url('arrow-next.png');
-        right:90px; /* 752px - 33px */
-}
-
-
 #debug-controls {
 	display:none;
 	position:absolute;
