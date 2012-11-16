@@ -1,26 +1,8 @@
-ubiquity-slideshow-netrunner (58.2) dryland-te; urgency=low
+ubiquity-slideshow-netrunner (58.2) nadia; urgency=low
 
-  * Initial Dryland TE release
+  * Initial nadia release
 
- -- Frédéric Gaudet <fred@linuxmint.com>  Wed, 10 Oct 2012 15:06:18 +0200
-
-ubiquity-slideshow-netrunner (58.1) enigma; urgency=low
-
-  * Initial enigma release
-
- -- Frédéric Gaudet <fred@linuxmint.com>  Wed, 19 Sep 2012 13:33:00 +0200
-
-ubiquity-slideshow-netrunner (58.1) dryland-se; urgency=low
-
-  * Fixed typo
-
- -- Frederic Gaudet <fred@linuxmint.com>  Mon, 23 Jul 2012 15:02:44 +0200
-
-ubiquity-slideshow-netrunner (58) dryland-se; urgency=low
-
-  * Initial dryland-se release
-
- -- Frederic Gaudet <fred@linuxmint.com>  Wed, 16 May 2012 11:47:43 +0200
+ -- Frédéric Gaudet <fred@linuxmint.com>  Fri, 16 Nov 2012 22:54:01 +0100
 
 ubiquity-slideshow-ubuntu (58) precise; urgency=low
 
