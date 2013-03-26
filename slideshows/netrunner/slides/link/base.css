@@ -12,9 +12,10 @@ html, body {
 Hyperlink-style text
 */
 a {
-	color:#d9a246;
+	color:#bce4f9;
 	font-style:normal;
 	text-decoration:none;
+	text-shadow: 1px 0px 3px #42506b;
 }
 
 #slideshow {
@@ -39,11 +40,42 @@ a {
 	height:100%;
 }
 
+.control-arrow {
+        display:block;
+        position:absolute;
+
+        z-index:100;
+        top:180px; /*top:218px;*/
+        height:64px;
+        width:33px;
+
+        background-repeat:no-repeat;
+        cursor:pointer;
+}
+.control-arrow.disabled {
+	cursor:default;
+}
+.control-arrow:hover {
+        background-position: 0px -65px;
+}
+.control-arrow:active {
+        background-position: 0px -130px;
+}
+.control-arrow#prev-slide {
+        background-image:url('arrow-back.png');
+        left:0px;
+}
+.control-arrow#next-slide {
+        background-image:url('arrow-next.png');
+        left:582px; /* 752px - 33px */
+}
+
+
 #debug-controls {
 	display:none;
 	position:absolute;
 	top:540px;
-	width:600px;
+	width:700px;
 	text-align:center;
 }
 #debug-controls input {
@@ -60,9 +92,10 @@ a {
 /* title block is positioned at the bottom of its parent, which should be .header */
 .title {
 	position:absolute;
+	text-shadow: 1px 0px 3px #42506b;
 	
 	bottom:40px;
-	width:560px; /* the ideal width would leave more space on the right */
+	width:510px; /* the ideal width would leave more space on the right */
 	left:46px; /* matches padding of .content and .content ul: 16 + 20 */
 	
 	font-size:20px; /* applies to all lines except first */
@@ -70,7 +103,7 @@ a {
 	
 	letter-spacing:-1px;
 	
-	color:#FDBC4F;
+	color:#ffffff;
 	
 	padding:0px;
 	margin:0px;
@@ -90,7 +123,7 @@ right of a slide and is given a size of 64x64 pixels.
 	height:auto;
 	
 	top:40px;
-	right:100px;
+	right:40px;
 	
 	z-index:11;
 	border:0px;
@@ -130,13 +163,14 @@ Slide's body text goes inside here.
 	
 	font-size:14px;
 	color:#ffffff;
+	text-shadow: 1px 0px 3px #42506b;
 }
 
 .content ul {
 	margin-top:0px;
-	padding-left:50px;
+	padding-left:60px;
 	
-	width:430px;
+	width:470px;
 	height:223px;
 	
 	overflow:auto;
@@ -160,11 +194,12 @@ ul :first-line, there would be less room for failure. */
 	width:100%;
 	padding:0px;
 	margin:0px;
-	bottom:35px;
-	text-align:left;
+	bottom:40px;
+	text-align:right;
 	
-	font-weight:bold;
-	color:#c3c3c3;
+	font-weight:normal;
+	color:#ffffff;
+	text-shadow: 1px 0px 3px #42506b;
 }
 
 .content img.inline {
