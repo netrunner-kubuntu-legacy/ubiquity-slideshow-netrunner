@@ -1,3 +1,9 @@
+ubiquity-slideshow-netrunner (68.1) enigma-1306; urgency=low
+
+  * Import upstream version 68
+
+ -- Frédéric Gaudet <fred@linuxmint.com>  Wed, 03 Apr 2013 13:51:41 +0200
+
 ubiquity-slideshow-netrunner (58.3) enigma-1306; urgency=low
 
   * Initial Enigma-1306 release
