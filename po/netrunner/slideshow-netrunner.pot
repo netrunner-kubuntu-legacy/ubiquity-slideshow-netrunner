@@ -23,7 +23,7 @@ msgstr ""
 
 #. type: Content of: <div><div><ul><li>
 #: slideshows/netrunner/slides/1-welcome.html:7
-msgid "Welcome to Netrunner Dryland - Third Edition (12.12)."
+msgid "Welcome to Netrunner 5 - Enigma-II (13.12)."
 msgstr ""
 
 #. type: Content of: <div><div><ul><li>

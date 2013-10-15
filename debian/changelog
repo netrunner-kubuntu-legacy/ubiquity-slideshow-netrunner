@@ -1,3 +1,9 @@
+ubiquity-slideshow-netrunner (68.2) saucy; urgency=low
+
+  * Change welcome text to Enigma-II 13.12 release
+
+ -- Leszek Lesner <leszek@zevenos.com>  Tue, 15 Oct 2013 12:00:34 +0200
+
 ubiquity-slideshow-netrunner (68.1) enigma-1306; urgency=low
 
   * Import upstream version 68
