@@ -1,29 +1,38 @@
-html, body
-{
+html, body {
 	margin:0;
 	padding:0;
-	font-family: ubuntu;
-	/* FIXME: should be transparent, but this should do for now */
-	background-color: #DFDFE0;
-	color:#000000;
+	
+	background-color:#424242;
+	
+	font-family: Ubuntu, sans-serif;
+	color:#ffffff;
 }
 
 /*
 Hyperlink-style text
 */
-a
-{
-	color: #0088aa;
+a {
+	color:#bce4f9;
+	font-style:normal;
+	text-decoration:none;
+	text-shadow: 1px 0px 3px #42506b;
 }
 
-#slideshow
-{
+#slideshow {
 	position:absolute;
 	
-	width: 100%;
-	height: 100%;
+	width:615px;
+	height:420px;
 	
 	overflow:hidden;
+	
+	background-image:url('background.png');
+	background-repeat:no-repeat;
+	background-position:top left;
+	
+/*	background-color:#ffffff; */
+	
+	/*cursor:default;*/
 }
 #slideshow > div {
 	position:absolute;
@@ -31,10 +40,41 @@ a
 	height:100%;
 }
 
+.control-arrow {
+        display:block;
+        position:absolute;
+
+        z-index:100;
+        top:180px; /*top:218px;*/
+        height:64px;
+        width:33px;
+
+        background-repeat:no-repeat;
+        cursor:pointer;
+}
+.control-arrow.disabled {
+	cursor:default;
+}
+.control-arrow:hover {
+        background-position: 0px -65px;
+}
+.control-arrow:active {
+        background-position: 0px -130px;
+}
+.control-arrow#prev-slide {
+        background-image:url('arrow-back.png');
+        left:0px;
+}
+.control-arrow#next-slide {
+        background-image:url('arrow-next.png');
+        left:582px; /* 752px - 33px */
+}
+
+
 #debug-controls {
 	display:none;
 	position:absolute;
-	top:440px;
+	top:540px;
 	width:700px;
 	text-align:center;
 }
@@ -42,110 +82,173 @@ a
 	width:40px;
 }
 
-/*
-Title block is positioned at the top of a slide.
-*/
-.title
-{
+/* fixed container to align title */
+.header {
 	position:absolute;
-	top:15px;
-	left:10px;
+	top:-15px;
+	height:200px;
+}
 
-	font-size:20px;
-	font-weight:bold;
-	color: #0f262f;
-	border-bottom: 1px solid #5b8595;
-	width: 100%;
-
-	padding:0;
-	margin:0;
+/* title block is positioned at the bottom of its parent, which should be .header */
+.title {
+	position:absolute;
+	text-shadow: 1px 0px 3px #42506b;
+	
+	bottom:40px;
+	width:510px; /* the ideal width would leave more space on the right */
+	left:46px; /* matches padding of .content and .content ul: 16 + 20 */
+	
+	font-size:20px; /* applies to all lines except first */
+	font-weight:normal;
+	
+	letter-spacing:-1px;
+	
+	color:#ffffff;
+	
+	padding:0px;
+	margin:0px;
+}
+.title:first-line {
+	font-size:28px;
 }
 
 /*
 Typically an image. This is positioned at the top
 right of a slide and is given a size of 64x64 pixels.
 */
-.icon
-{
+.icon {
 	position:absolute;
 	
 	width:auto;
 	height:auto;
 	
-	bottom:0px;
-	right:10px;
+	top:40px;
+	right:40px;
 	
 	z-index:11;
 	border:0px;
 }
+/*.icon.exact {
+	top:69px;
+	left:549px;
+	width:215px;
+	height:auto;
+}*/
 
 /*
-#content expects to be contained in here. #main
+.content expects to be contained in here. .main
 creates a nice, plain surface upon which it can
-appear :)
+appear, spaced appropriately from .title.
 */
-.main
-{
+.main {
 	position:absolute;
 	
-	top:50px;
+	top:150px; /* fixed content for netrunner installation */
 	left:0px;
 	
-	padding-right:60px;
+	width:100%;
+	height:180px;
 	
-	font-size:14px;
+	padding-right:60px;
 	
 	z-index:12;
 }
 
 /*
-Slide's body text goes here. It appears right below
-the title, at the top of the white area with heavy
-margins around it.
+Slide's body text goes inside here.
 */
-.main .content
-{
-	padding-left:16px;
-	padding-right:16px;
+.content {
+	padding:16px;
+	padding-top:32px;
+	
+	font-size:14px;
+	color:#ffffff;
+	text-shadow: 1px 0px 3px #42506b;
 }
 
-.content ul
-{
+.content ul {
 	margin-top:0px;
-	padding-left:1.8em;
+	padding-left:60px;
 	
-	height:auto;
+	width:470px;
+	height:223px;
 	
 	overflow:auto;
 	
+	list-style-type:none;
 	list-style-image:url("bullet-point.png");
 }
 
-.content li
-{
-	padding:0.6em;
+.content li {
+	padding:8px;
+	padding-left:0px;
+}
+/* hack to get the text wrapping around the icon. If we could do this for
+ul :first-line, there would be less room for failure. */
+.content.wrap-top li:first-child {
+	width:400px;
 }
 
-.content .special
-{
-	position:absolute;
-	top:290px;
-	left:50px;
+.content .footer {
+	position:relative;
+	width:100%;
+	padding:0px;
+	margin:0px;
+	bottom:40px;
+	text-align:right;
 	
-	font-weight:bold;
+	font-weight:normal;
+	color:#ffffff;
+	text-shadow: 1px 0px 3px #42506b;
 }
 
-.content img.inline
-{
-	height:auto;
+.content img.inline {
+	height:14px;
 	width:auto;
+}
+
+/*
+The menu-item style is a descriptive aid for pointing the end user at,
+for example, a place in either the system menu or an application menu.
+This way we can provide clear visual cues with minimal babbling.
+*/
+.menu-item {
+	display:inline-block;
+	
+	border-radius:3px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
+	
+	height:16px;
+	padding:1px;
+	
+	padding-left:3px;
+	padding-right:3px;
+	
+	border-style:solid;
+	border-width:1px;
+	border-color:#a89a8d;
+	
+	background-color:#f7f5f3;
+}
+
+/*
+This rule applies to an img of class menu-arrow. It appears as a nice
+looking arrow that can separate items in a menu much like how submenus
+look in Ubuntu's GTK theme.
+*/
+.menu-item img.menu-arrow {
+	display:inline-block;
+	content:url('menu-arrow.png');
+	
+	padding-left:2px;
+	padding-right:5px;
 }
 
 /*
 This rule disables drag-and-drop for images.  See bug #448703.
 */
-img
-{
+img {
  	-webkit-user-drag: none;
 }
 
@@ -155,22 +258,19 @@ img
 .rtl {
 	direction:rtl;
 }
-.rtl .title {
+/* TODO: NEED reversed title and icon for RTL */
+/*.rtl .title {
 	right:10px;
-}
-.rtl .icon {
+}*/
+/*.rtl .icon {
 	left:10px;
 	right:auto;
-}
+}*/
 .rtl .main {
 	right:0px;
 	padding-right:0px;
 	padding-left:60px;
 }
-.rtl .content ul {
-	list-style-image:url("bullet-point.rtl.png");
-}
-.rtl .content .special {
-	right:50px;
-	left:auto;
+.rtl .content .footer {
+    text-align:left;
 }
