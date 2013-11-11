@@ -15,14 +15,14 @@ a {
 	color:#bce4f9;
 	font-style:normal;
 	text-decoration:none;
-	text-shadow: 1px 0px 3px #42506b;
+	text-shadow:1px 0px 3px #42506b;
 }
 
 #slideshow {
 	position:absolute;
 	
-	width:615px;
-	height:420px;
+	width:760px;
+	height:495px;
 	
 	overflow:hidden;
 	
@@ -45,7 +45,7 @@ a {
         position:absolute;
 
         z-index:100;
-        top:180px; /*top:218px;*/
+        top:216px; /*top:(495-66)/2;*/
         height:64px;
         width:33px;
 
@@ -67,7 +67,7 @@ a {
 }
 .control-arrow#next-slide {
         background-image:url('arrow-next.png');
-        left:582px; /* 752px - 33px */
+        left:727px; /* 760px - 33px */
 }
 
 
@@ -85,14 +85,14 @@ a {
 /* fixed container to align title */
 .header {
 	position:absolute;
-	top:-15px;
-	height:200px;
+	top:20px;
+	height:70px;
 }
 
 /* title block is positioned at the bottom of its parent, which should be .header */
 .title {
 	position:absolute;
-	text-shadow: 1px 0px 3px #42506b;
+	text-shadow:1px 0px 3px #42506b;
 	
 	bottom:40px;
 	width:510px; /* the ideal width would leave more space on the right */
@@ -111,6 +111,55 @@ a {
 .title:first-line {
 	font-size:28px;
 }
+
+
+.intro {
+	line-height: 40px;
+  
+}
+/* Icons are replaced with screenshots */
+.screen {
+	position:absolute;
+	
+	width:auto;
+	height:auto;
+	
+	top:92px;
+	right:0px;
+	
+	z-index:11;
+	border:0px;
+}
+
+/* Screenshots with different padding, welcome screen */
+.screen-two {
+	position:absolute;
+	
+	width:auto;
+	height:auto;
+	
+	top:102px;
+	right:0px;
+	
+	z-index:11;
+	border:0px;
+}
+
+/* Netrunner logo */
+.logo {
+	position:absolute;
+	
+	width:auto;
+	height:auto;
+	
+	top:22px;
+	right:22px;
+	
+	z-index:15;
+	border:0px;
+  
+}
+
 
 /*
 Typically an image. This is positioned at the top
@@ -143,7 +192,7 @@ appear, spaced appropriately from .title.
 .main {
 	position:absolute;
 	
-	top:150px; /* fixed content for netrunner installation */
+	top:70px;/* fixed content for netrunner installation */
 	left:0px;
 	
 	width:100%;
@@ -159,21 +208,21 @@ Slide's body text goes inside here.
 */
 .content {
 	padding:16px;
-	padding-top:32px;
+	padding-top:52px;
 	
 	font-size:14px;
 	color:#ffffff;
-	text-shadow: 1px 0px 3px #42506b;
+	text-shadow:1px 0px 3px #42506b;
 }
 
 .content ul {
 	margin-top:0px;
-	padding-left:60px;
+	padding-left:46px;
 	
-	width:470px;
-	height:223px;
+	width:250px;
+	height:340px;
 	
-	overflow:auto;
+	overflow:hidden;
 	
 	list-style-type:none;
 	list-style-image:url("bullet-point.png");
@@ -186,16 +235,16 @@ Slide's body text goes inside here.
 /* hack to get the text wrapping around the icon. If we could do this for
 ul :first-line, there would be less room for failure. */
 .content.wrap-top li:first-child {
-	width:400px;
+	width:320px;
 }
 
 .content .footer {
 	position:relative;
-	width:100%;
+	width:270px;
 	padding:0px;
 	margin:0px;
 	bottom:40px;
-	text-align:right;
+	text-align:left;
 	
 	font-weight:normal;
 	color:#ffffff;
