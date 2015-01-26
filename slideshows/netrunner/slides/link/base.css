@@ -1,6 +1,15 @@
 /*****************************************************************
 ****                                                          ****
-****  Last update Wed 14, May2014. for Netrunner 14 Frontier  ****
+****  Last update Wed 18, Dec 2015. For Netrunner 15 XOXO     ****
+****                                                          ****
+******************************************************************
+****                                                          ****
+****  Changes:                                                ****
+****  - background changed from png to jpg                    ****
+****  - background left side area matches installer           ****
+****    active button color                                   ****
+****  - changed welcome slide picture (neutral                ****
+****    silver wallpaper)                                     ****
 ****                                                          ****
 *****************************************************************/
 
@@ -27,7 +36,7 @@ a {
   width: 760px;
   height: 495px;
   overflow: hidden;
-  background-image: url('background.png');
+  background-image: url('background.jpg');
   background-repeat: no-repeat;
   background-position: top left;
   /* background-color:#ffffff; */
