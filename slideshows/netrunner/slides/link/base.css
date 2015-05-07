@@ -1,299 +1,349 @@
 /*****************************************************************
 ****                                                          ****
-****  Last update Wed 18, Dec 2015. For Netrunner 15 XOXO     ****
+****  Last update Wed 18, Dec 2015.                           **** 
+****  For Netrunner 16 Ozymandias                             ****
 ****                                                          ****
 ******************************************************************
 ****                                                          ****
-****  Changes:                                                ****
-****  - background changed from png to jpg                    ****
-****  - background left side area matches installer           ****
-****    active button color                                   ****
-****  - changed welcome slide picture (neutral                ****
-****    silver wallpaper)                                     ****
+****  Changes                                                 ****
+****  - new design based on Prometheus slideshow              ****
+****  - included CSS reset from meyerweb.com                  ****
+****  - changed font to Lato and/or Open Sans                 ****
+****  - removed software icons and multiple screenshots       ****
 ****                                                          ****
 *****************************************************************/
 
+
+/* CSS Reset 
+    http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End CSS Reset */
+
+
+
 html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #a6a6a6;
-  font-family: Ubuntu, sans-serif;
-  color: #333333;
+    margin: 0;
+    padding: 0;
+    background-color: #a6a6a6;
+    font-family: Lato, "Open Sans" sans-serif;
+    color: #46494c;
 }
 
-/*
-Hyperlink-style text
-*/
+p {
+    font-size: 12px;
+    line-height: 16px;
+    
+}
+
+/* Hyperlink-style text */
 a {
-  color: #008dcf;
-  font-style: normal;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #ffffff;
+    color: #008dcf;
+    font-style: normal;
+    text-decoration: none;
+}
+.content li a {
+    color: #008dcf;
+    background: transparent;
+    padding: 3px 6px;
+    margin-left: -6px;    
+}
+.content li a:hover {
+    color: #fff;
+    background: #008dcf;
 }
 
 #slideshow {
-  position: absolute;
-  width: 760px;
-  height: 495px;
-  overflow: hidden;
-  background-image: url('background.jpg');
-  background-repeat: no-repeat;
-  background-position: top left;
-  /* background-color:#ffffff; */
-  /* cursor:default; */
+    position: absolute;
+    width: 760px;
+    height: 495px;
+    overflow: hidden;
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    /* background-color:#ffffff; */
+    /* cursor:default; */
 }
 #slideshow > div {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
+/* Controls arrows */
 .control-arrow {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  top: 216px; /*top:(495-66)/2;*/
-  height: 64px;
-  width: 33px;
-  background-repeat: no-repeat;
-  cursor: pointer;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top: 245px; /*top:(495-60)/2; +28*/
+    height: 60px;
+    width: 38px;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 .control-arrow.disabled {
-  cursor: default;
+    cursor: default;
 }
 .control-arrow:hover {
-  background-position: 0px -65px;
+    background-position: 0px -61px;
 }
 .control-arrow:active {
-  background-position: 0px -130px;
+    background-position: 0px -122px;
 }
 .control-arrow#prev-slide {
-  background-image: url('arrow-back.png');
-  left: 0px;
+    background-image: url('arrow-back.png');
+    left: 0px;
 }
 .control-arrow#next-slide {
-  background-image: url('arrow-next.png');
-  left: 727px; /* 760px - 33px */
+    background-image: url('arrow-next.png');
+    left: 722px; /* 760px - 38px */
 }
 
-
+/* Debug */
 #debug-controls {
-  display: none;
-  position: absolute;
-  top: 540px;
-  width: 700px;
-  text-align: center;
+    display: none;
+    position: absolute;
+    top: 540px;
+    width: 700px;
+    text-align: center;
 }
 #debug-controls input {
-  width: 40px;
+    width: 40px;
 }
 
-/* fixed container to align title */
+/* Fixed container to align title */
 .header {
-  position:absolute;
-  top: 20px;
-  height: 70px;
+    position:absolute;
+    top: 0px;
+    display: block;
+    width: 100%;
+    height: 96px;
+    background: #fff;
+    border-bottom: 4px solid #3daee9;
 }
 
-/* title block is positioned at the bottom of its parent, which should be .header */
+/* Title block is positioned at the bottom of its parent, which should be .header */
 .title {
-  position: absolute;
-  text-shadow: 0px 1px 0px #ffffff;
-  bottom: 40px;
-  width: 510px; /* the ideal width would leave more space on the right */
-  left: 46px; /* matches padding of .content and .content ul: 16 + 20 */
-  font-size: 20px; /* applies to all lines except first */
-  font-weight: normal;
-  letter-spacing: -1px;
-  color: #1d4568;
-  padding: 0px;
-  margin: 0px;
+    position: absolute;
+    bottom: 35px;
+    left: 50px; /* matches padding of .content and .content ul: 16 + 20 */
+    width: 500px; /* the ideal width would leave more space on the right */
+    font-size: 30px; /* applies to all lines except first */
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #46494c;
+    padding: 0px;
+    margin: 0px;
 }
 .title: first-line {
-  font-size:28px;
+    font-size: 30px;
 }
 
 .intro {
-  line-height: 40px;
+    line-height: 40px;
+    font-size: 12px;
   
 }
-/* Icons are replaced with screenshots */
+/* Screenshots or pictures on the right hand side of the slide */
 .screen {
-  position: absolute;
-  width: auto;
-  height: auto;
-  top: 92px;
-  right: 0px;
-  z-index: 11;
-  border: 0px;
-}
-
-/* Screenshots with different padding, welcome screen */
-.screen-two {
-  position: absolute;
-  width: auto;
-  height: auto;
-  top: 102px;
-  right: 0px;
-  z-index: 11;
-  border: 0px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 62px;
+    right: 0px;
+    z-index: 11;
+    border: 0px;
 }
 
 /* Netrunner logo */
 .logo {
-  position: absolute;
-  width: auto;
-  height: auto;
-  top: 22px;
-  right: 22px;
-  z-index: 15;
-  border: 0px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 18px;
+    right: 18px;
+    z-index: 15;
+    border: 0px;
 }
 
 
-/*
-Typically an image. This is positioned at the top
-right of a slide and is given a size of 64x64 pixels.
-*/
+/* Typically an image. This is positioned at the top
+right of a slide and is given a size of 64x64 pixels. */
 .icon {
-  position: absolute;
-  width: auto;
-  height: auto;
-  top: 40px;
-  right: 40px;
-  z-index: 11;
-  border: 0px;
+    position: absolute;
+    width: auto;
+    height: auto;
+    top: 40px;
+    right: 40px;
+    z-index: 11;
+    border: 0px;
 }
 /*
 .icon.exact {
-  top: 69px;
-  left: 549px;
-  width: 215px;
-  height: auto;
+    top: 69px;
+    left: 549px;
+    width: 215px;
+    height: auto;
 }
 */
 
-/*
-.content expects to be contained in here. .main
+/* .content expects to be contained in here. .main
 creates a nice, plain surface upon which it can
-appear, spaced appropriately from .title.
-*/
+appear, spaced appropriately from .title. */
 .main {
-  position: absolute;
-  top: 70px;/* fixed content for netrunner installation */
-  left: 0px;
-  width: 100%;
-  height: 180px;
-  padding-right: 60px;
-  z-index: 12;
+    position: absolute;
+    top: 70px; /* added space below header */
+    left: 0px;
+    width: 100%;
+    height: 180px;
+    padding-right: 60px;
+    z-index: 12;
 }
 
-/*
-Slide's body text goes inside here.
-*/
+/* Slide's body text goes inside here. */
 .content {
-  padding: 16px;
-  padding-top: 52px;
-  font-size: 14px;
-  color: #333333;
-  text-shadow: 0px 1px 0px #ffffff;
+    padding: 16px;
+    padding-top: 52px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #46494c;
 }
 
 .content ul {
-  margin-top: 0px;
-  padding-left: 46px;
-  width: 250px;
-  height: 340px;
-  overflow: hidden;
-  list-style-type: none;
-  list-style-image: url("bullet-point.png");
+    margin-top: 0px;
+    padding-left: 50px;
+    width: 260px;
+    height: 340px;
+    overflow: hidden;
+    list-style-type: none;
+    list-style-image: url("bullet-point.png");
 }
 
 .content li {
-  padding: 8px;
-  padding-left: 0px;
+    padding: 8px;
+    padding-left: 0px;
 }
 /* hack to get the text wrapping around the icon. If we could do this for
 ul :first-line, there would be less room for failure. */
 .content.wrap-top li:first-child {
-  width: 320px;
+    width: 320px;
 }
 
 .content .footer {
-  position:relative;
-  width: 270px;
-  padding: 0px;
-  margin: 0px;
-  bottom: 40px;
-  text-align: left;
-  font-weight: normal;
-  color: #555555;
-  text-shadow: 0px 1px 0px #ffffff;
+    position:relative;
+    width: 270px;
+    padding: 0px;
+    margin: 0px;
+    bottom: 40px;
+    text-align: left;
+    font-weight: normal;
+    color: #555555;
+    text-shadow: 0px 1px 0px #ffffff;
 }
 
 .content img.inline {
-  height: 14px;
-  width: auto;
+    height: 14px;
+    width: auto;
 }
 
-/*
-The menu-item style is a descriptive aid for pointing the end user at,
+/* The menu-item style is a descriptive aid for pointing the end user at,
 for example, a place in either the system menu or an application menu.
-This way we can provide clear visual cues with minimal babbling.
-*/
+This way we can provide clear visual cues with minimal babbling. */
 .menu-item {
-  display: inline-block;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  height: 16px;
-  padding: 1px;
-  padding-left: 3px;
-  padding-right: 3px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #999999;
-  background-color: #f5f5f5;
+    display: inline-block;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    height: 16px;
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #999999;
+    background-color: #f5f5f5;
 }
 
-/*
-This rule applies to an img of class menu-arrow. It appears as a nice
+/* This rule applies to an img of class menu-arrow. It appears as a nice
 looking arrow that can separate items in a menu much like how submenus
-look in Ubuntu's GTK theme.
-*/
+look in Ubuntu's GTK theme. */
 .menu-item img.menu-arrow {
-  display: inline-block;
-  content: url('menu-arrow.png');
-  padding-left: 2px;
-  padding-right: 5px;
+    display: inline-block;
+    content: url('menu-arrow.png');
+    padding-left: 2px;
+    padding-right: 5px;
 }
 
-/*
-This rule disables drag-and-drop for images.  See bug #448703.
-*/
+/* This rule disables drag-and-drop for images.  See bug #448703. */
 img {
-  -webkit-user-drag: none;
+    -webkit-user-drag: none;
 }
 
 
 
 /* RTL stuff */
 .rtl {
-  direction: rtl;
+    direction: rtl;
 }
 /* TODO: NEED reversed title and icon for RTL */
 /*.rtl .title {
-	right: 10px;
+    right: 10px;
 }*/
 /*.rtl .icon {
-	left: 10px;
+    left: 10px;
 	right: auto;
 }*/
 .rtl .main {
-  right: 0px;
-  padding-right: 0px;
-  padding-left: 60px;
+    right: 0px;
+    padding-right: 0px;
+    padding-left: 60px;
 }
 .rtl .content .footer {
-  text-align: left;
+    text-align: left;
 }
